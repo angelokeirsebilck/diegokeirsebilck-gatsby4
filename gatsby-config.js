@@ -30,7 +30,18 @@ module.exports = {
         icon: 'src/images/icon.png',
       },
     },
-    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `blurred`,
+          quality: 80,
+          breakpoints: [640, 768, 1024, 1280, 1536],
+          backgroundColor: `transparent`,
+        },
+      },
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
@@ -39,14 +50,6 @@ module.exports = {
         path: './src/images/',
       },
       __key: 'images',
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: './src/pages/',
-      },
-      __key: 'pages',
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -61,11 +64,14 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-strapi',
+      resolve: 'gatsby-source-graphql',
       options: {
-        apiURL: process.env.STRAPI_URL,
-        singleTypes: ['homebanner', 'home-content'],
-        queryLimit: 1000,
+        // Arbitrary name for the remote schema Query type
+        typeName: 'STRAPI',
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: 'strapi',
+        // Url to query from
+        url: 'http://localhost:1337/graphql',
       },
     },
     'gatsby-plugin-postcss',
