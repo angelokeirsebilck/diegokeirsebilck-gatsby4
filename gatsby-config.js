@@ -17,7 +17,7 @@ module.exports = {
     description: `Elektro Diego - Voor al je algemene elektriciteitswerken`,
     author: `@AngeloKeirsebilck`,
     twitterUsername: '@AngeloKbilck',
-    siteUrl: siteUrl,
+    siteUrl: 'https://elektro-diego.be',
     image: '/elektro-diego-logo-black.jpg',
   },
   plugins: [
@@ -52,14 +52,6 @@ module.exports = {
       __key: 'images',
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: './src/pages/',
-      },
-      __key: 'pages',
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Elektro Diego Website`,
@@ -75,11 +67,11 @@ module.exports = {
       resolve: 'gatsby-source-graphql',
       options: {
         // Arbitrary name for the remote schema Query type
-        typeName: 'STRAPI',
+        typeName: 'TEST',
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: 'strapi',
         // Url to query from
-        url: `${process.env.STRAPI_URL}/graphql`,
+        url: 'http://localhost:1337/graphql',
       },
     },
     'gatsby-plugin-postcss',
