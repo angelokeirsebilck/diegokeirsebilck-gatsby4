@@ -54,7 +54,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
+        name: 'pages',
         path: './src/pages/',
       },
       __key: 'pages',
