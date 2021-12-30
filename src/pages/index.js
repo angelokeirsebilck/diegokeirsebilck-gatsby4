@@ -6,11 +6,15 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 const IndexPage = ({ data }) => {
   const {
     strapi: {
-      homeContent: { Content },
+      homeContent: {
+        data: {
+          attributes: { Content },
+        },
+      },
     },
   } = data;
 
-  const image = getImage(Content[0].Media.imageFile);
+  const image = getImage(Content[0].Media.data.attributes.imageFile);
 
   return (
     <main>
@@ -25,20 +29,27 @@ export const query = graphql`
   {
     strapi {
       homeContent {
-        Content {
-          ... on STRAPI_ComponentContentTekstMedia {
-            __typename
-            id
-            Tekst
-            Titel
-            Media {
-              id
-              imageFile {
-                childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED)
+        data {
+          attributes {
+            Content {
+              ... on STRAPI_ComponentContentMediaTekst {
+                id
+                Tekst
+                Titel
+                Media {
+                  data {
+                    attributes {
+                      url
+                      imageFile {
+                        id
+                        childImageSharp {
+                          gatsbyImageData
+                        }
+                      }
+                    }
+                  }
                 }
               }
-              url
             }
           }
         }
