@@ -23,6 +23,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -78,79 +79,6 @@ module.exports = {
       options: {
         fonts: [`Montserrat\:100,300,400,500,600,700`],
         display: 'swap',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      output: '',
-      options: {
-        query: `
-        {
-          allFile {
-            edges {
-              node {
-                modifiedTime
-                name
-              }
-            }
-          }
-          allSitePage {
-            nodes {
-              path
-            }
-          }
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-        }
-      `,
-        // resolveSiteUrl: site => {
-        //   return site.siteMetadata.siteUrl
-        // },
-        resolvePages: ({
-          allSitePage: { nodes: allPages },
-          allFile: { edges },
-        }) => {
-          let allPagesNew = [];
-
-          allPages.forEach((page, index) => {
-            if (!page.path.includes('404')) {
-              if (page.path == '/') {
-                const edgeFiltered = edges.filter(
-                  (edge) => edge.node.name == 'index'
-                );
-                edgeFiltered.forEach((item) => {
-                  const pageObject = {
-                    path: page.path,
-                    lastMod: item.node.modifiedTime,
-                  };
-                  allPagesNew.push(pageObject);
-                });
-              } else {
-                const edgeFiltered = edges.filter(
-                  (edge) => edge.node.name == page.path.replace(/\//g, '')
-                );
-                edgeFiltered.forEach((item) => {
-                  const pageObject = {
-                    path: page.path,
-                    lastMod: item.node.modifiedTime,
-                  };
-                  allPagesNew.push(pageObject);
-                });
-              }
-            }
-          });
-
-          return allPagesNew;
-        },
-        serialize: ({ path, lastMod }) => {
-          return {
-            url: path,
-            lastmod: lastMod,
-          };
-        },
       },
     },
     {
