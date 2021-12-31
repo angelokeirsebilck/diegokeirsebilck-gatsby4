@@ -33,7 +33,6 @@ const IndexPage = ({ data }) => {
         description='Elektro Diego - Diego Keirsebilck - Voor al je algemene elektriciteitswerken'
       />
       <Landing />
-      <GatsbyImage image={image} />
     </Layout>
   );
 };

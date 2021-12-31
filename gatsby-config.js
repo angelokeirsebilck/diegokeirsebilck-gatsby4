@@ -34,7 +34,6 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          formats: [`auto`, `webp`],
           placeholder: `blurred`,
           quality: 80,
           breakpoints: [640, 768, 1024, 1280, 1536],
@@ -75,5 +74,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-postcss',
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Montserrat\:100,300,400,500,600,700`],
+        display: 'swap',
+      },
+    },
   ],
 };
