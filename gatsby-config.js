@@ -81,5 +81,100 @@ module.exports = {
         display: 'swap',
       },
     },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      output: '',
+      options: {
+        query: `
+        {
+          allFile {
+            edges {
+              node {
+                modifiedTime
+                name
+              }
+            }
+          }
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+        }
+      `,
+        // resolveSiteUrl: site => {
+        //   return site.siteMetadata.siteUrl
+        // },
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allFile: { edges },
+        }) => {
+          let allPagesNew = [];
+
+          allPages.forEach((page, index) => {
+            if (!page.path.includes('404')) {
+              if (page.path == '/') {
+                const edgeFiltered = edges.filter(
+                  (edge) => edge.node.name == 'index'
+                );
+                edgeFiltered.forEach((item) => {
+                  const pageObject = {
+                    path: page.path,
+                    lastMod: item.node.modifiedTime,
+                  };
+                  allPagesNew.push(pageObject);
+                });
+              } else {
+                const edgeFiltered = edges.filter(
+                  (edge) => edge.node.name == page.path.replace(/\//g, '')
+                );
+                edgeFiltered.forEach((item) => {
+                  const pageObject = {
+                    path: page.path,
+                    lastMod: item.node.modifiedTime,
+                  };
+                  allPagesNew.push(pageObject);
+                });
+              }
+            }
+          });
+
+          return allPagesNew;
+        },
+        serialize: ({ path, lastMod }) => {
+          return {
+            url: path,
+            lastmod: lastMod,
+          };
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }],
+            sitemap: `${siteUrl}/sitemap/sitemap-0.xml`,
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+        },
+      },
+    },
   ],
 };
