@@ -161,7 +161,7 @@ module.exports = {
         env: {
           production: {
             policy: [{ userAgent: '*' }],
-            sitemap: `${siteUrl}/sitemap/sitemap-0.xml`,
+            sitemap: `https://elektro-diego.be/sitemap/sitemap-0.xml`,
           },
           'branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
