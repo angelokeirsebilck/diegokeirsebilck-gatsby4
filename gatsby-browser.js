@@ -8,5 +8,5 @@
 
 import './src/styles/global.css';
 
-// import wrapWithProvider from "./state/ReduxWrapper"
-// export const wrapRootElement = wrapWithProvider
+import wrapWithProvider from './state/ReduxWrapper';
+export const wrapRootElement = wrapWithProvider;
