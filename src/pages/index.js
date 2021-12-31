@@ -1,21 +1,14 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-// markup
-const IndexPage = ({ data }) => {
-  const {
-    strapi: {
-      homeContent: { Content },
-    },
-  } = data;
+import HomeBanner from '../components/home/HomeBanner';
 
-  // const image = getImage(Content[0].Media.data.attributes.imageFile);
-  const image = getImage(Content[0].Media.imageFile);
+// markup
+const IndexPage = () => {
   return (
     <Layout>
       <SEO
@@ -23,6 +16,7 @@ const IndexPage = ({ data }) => {
         description='Elektro Diego - Diego Keirsebilck - Voor al je algemene elektriciteitswerken'
       />
       <Header />
+      <HomeBanner />
     </Layout>
   );
 };

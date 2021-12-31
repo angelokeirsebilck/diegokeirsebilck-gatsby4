@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-import './src/styles/global.css';
+import './src/styles/global.scss';
 
 import wrapWithProvider from './state/ReduxWrapper';
 export const wrapRootElement = wrapWithProvider;

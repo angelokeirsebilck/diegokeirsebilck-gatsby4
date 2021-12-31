@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 // Images
-import SpinnerImage from '../images/spark.svg';
+import SpinnerImage from '../images/svg/spark.svg';
 
 // Redux
 import { connect } from 'react-redux';
@@ -33,12 +33,12 @@ const Layout = ({ children, global }) => {
       {global.isSubmitting && (
         <div className='fixed top-0 left-0 right-0 bottom-0 h-screen w-screen z-50 flex justify-center items-center'>
           <div className='w-25 z-40'>
-            <img src={SpinnerImage} alt='Spinner' className='animate-spin' />
+            <SpinnerImage alt='Spinner' className='animate-spin' />
           </div>
           <div className='absolute bg-overlay opacity-70 w-full h-full z-20'></div>
         </div>
       )}
-      <div className='max-w-screen-2xl px-8 font-sans text-base-clamp text-body mx-auto'>
+      <div className='max-w-screen-2xl px-4 font-sans text-base-clamp text-body mx-auto'>
         {children}
       </div>
     </div>

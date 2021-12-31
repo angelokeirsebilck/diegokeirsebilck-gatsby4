@@ -81,6 +81,7 @@ module.exports = {
         display: 'swap',
       },
     },
+    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -100,6 +101,14 @@ module.exports = {
             sitemap: null,
             host: null,
           },
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /svg/,
         },
       },
     },
