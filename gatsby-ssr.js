@@ -6,5 +6,5 @@
 
 // You can delete this file if you're not using it
 
-// import wrapWithProvider from "./state/ReduxWrapper"
-// export const wrapRootElement = wrapWithProvider
+import wrapWithProvider from './state/ReduxWrapper';
+export const wrapRootElement = wrapWithProvider;

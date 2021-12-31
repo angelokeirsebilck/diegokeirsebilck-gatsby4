@@ -2,6 +2,10 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
+import Landing from '../components/Landing';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+
 // markup
 const IndexPage = ({ data }) => {
   // const {
@@ -23,11 +27,13 @@ const IndexPage = ({ data }) => {
   // const image = getImage(Content[0].Media.data.attributes.imageFile);
   const image = getImage(Content[0].Media.imageFile);
   return (
-    <main>
-      <h1 className='text-yellow-300'>{Content[0].Titel}</h1>
-      <GatsbyImage image={image} alt='test' />
-      test hallo
-    </main>
+    <Layout>
+      <SEO
+        title='Home - Elektro Diego -  Voor al je algemene elektriciteitswerken'
+        description='Elektro Diego - Diego Keirsebilck - Voor al je algemene elektriciteitswerken'
+      />
+      <Landing />
+    </Layout>
   );
 };
 
