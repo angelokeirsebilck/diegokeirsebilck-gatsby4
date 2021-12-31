@@ -29,7 +29,7 @@ const HomeBanner = () => {
   };
 
   return (
-    <div className='md:grid gap-6 md:grid-cols-12 h-[calc(100vh_-_8rem)]'>
+    <div className='md:grid gap-6 md:grid-cols-12 md:h-[calc(100vh_-_8rem)]'>
       <div className='col-span-7 flex flex-col justify-center'>
         <div
           className='display1-clamp strong-primary font-semibold mb-8 md:mb-10'

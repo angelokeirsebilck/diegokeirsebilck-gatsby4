@@ -4,34 +4,15 @@ import { Link } from 'gatsby';
 import { StaticImage, getImage } from 'gatsby-plugin-image';
 import { Squash as Hamburger } from 'hamburger-react';
 
-// import Logo from '../images/elektro-diego-logo.svg';
+import Logo from '../images/svg/elektro-diego-logo.svg';
 
 import NavMenu from './nav/NavMenu';
 
 const Header = () => {
   return (
-    <header className='flex justify-between items-center h-16 my-8'>
+    <header className='flex justify-between items-center h-11 md:h-16 my-8'>
       <Link to='/'>
-        <div className='hidden md:block'>
-          <StaticImage
-            src='../images/elektro-diego-logo.png'
-            alt='Elektro Diego Logo'
-            placeholder='blurred'
-            layout='constrained'
-            height={70}
-            loading='eager'
-          />
-        </div>
-        <div className='block md:hidden'>
-          <StaticImage
-            src='../images/elektro-diego-logo.png'
-            alt='Elektro Diego Logo'
-            placeholder='blurred'
-            layout='constrained'
-            height={45}
-            loading='eager'
-          />
-        </div>
+        <Logo className='h-10 md:h-16 w-full' />
       </Link>
       <div className='hidden md:block'>
         <NavMenu />
