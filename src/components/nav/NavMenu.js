@@ -5,7 +5,7 @@ import NavLink from './NavLink';
 
 const NavMenu = () => {
   return (
-    <div className='flex items-center py-8'>
+    <div className='flex items-center'>
       {NavLinks.map((link) => {
         return <NavLink key={link.id} to={link.url} text={link.name} />;
       })}
