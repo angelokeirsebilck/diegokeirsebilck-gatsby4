@@ -22,6 +22,11 @@ exports.createResolvers = async ({
         // projection: { url: true },
         async resolve(source, args, context, info) {
           let sourceUrl = `${process.env.STRAPI_URL}${source.url}`;
+
+          if (process.env.NODE_ENV === 'production') {
+            sourceUrl = source.url;
+          }
+
           return createRemoteFileNode({
             url: sourceUrl,
             store,
