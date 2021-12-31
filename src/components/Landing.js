@@ -35,7 +35,7 @@ const Landing = ({ global }) => {
       >
         <div className='flex'>
           <StaticImage
-            src='../images/elektro-diego-logo-black.jpg'
+            src='../images/elektro-diego-logo-black.webp'
             alt='Elektro Diego Logo'
             placeholder='blurred'
             layout='constrained'
