@@ -1,42 +1,27 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import { StaticImage, getImage } from 'gatsby-plugin-image';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+import NavMenu from './nav/NavMenu';
+
+const Header = () => (
+  <header className='flex justify-between py-4'>
+    <Link to='/'>
+      <StaticImage
+        src='../images/elektro-diego-logo.svg'
+        alt='Elektro Diego Logo'
+        placeholder='blurred'
+        layout='constrained'
+        loading='eager'
+      />
+    </Link>
+    <NavMenu />
   </header>
-)
+);
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+Header.propTypes = {};
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+Header.defaultProps = {};
 
-export default Header
+export default Header;

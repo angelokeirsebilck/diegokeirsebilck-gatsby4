@@ -2,22 +2,12 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import Landing from '../components/Landing';
+import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 // markup
 const IndexPage = ({ data }) => {
-  // const {
-  //   strapi: {
-  //     homeContent: {
-  //       data: {
-  //         attributes: { Content },
-  //       },
-  //     },
-  //   },
-  // } = data;
-
   const {
     strapi: {
       homeContent: { Content },
@@ -32,7 +22,7 @@ const IndexPage = ({ data }) => {
         title='Home - Elektro Diego -  Voor al je algemene elektriciteitswerken'
         description='Elektro Diego - Diego Keirsebilck - Voor al je algemene elektriciteitswerken'
       />
-      <Landing />
+      <Header />
     </Layout>
   );
 };
@@ -62,38 +52,5 @@ export const query = graphql`
     }
   }
 `;
-
-// export const query = graphql`
-//   {
-//     strapi {
-//       homeContent {
-//         data {
-//           attributes {
-//             Content {
-//               ... on STRAPI_ComponentContentMediaTekst {
-//                 id
-//                 Tekst
-//                 Titel
-//                 Media {
-//                   data {
-//                     attributes {
-//                       url
-//                       imageFile {
-//                         id
-//                         childImageSharp {
-//                           gatsbyImageData
-//                         }
-//                       }
-//                     }
-//                   }
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
 
 export default IndexPage;

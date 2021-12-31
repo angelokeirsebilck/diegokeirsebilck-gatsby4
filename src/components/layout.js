@@ -28,13 +28,6 @@ const Layout = ({ children, global }) => {
     }
   `);
 
-  // if (global.isSubmitting) {
-  //   document.getElementsByTagName("html")[0].classList.add("overflow-hidden")
-  // } else {
-  //   document.getElementsByTagName("html")[0].classList.remove("overflow-hidden")
-  // }
-  // const overflow = global.isSubmitting ? "overflow-hidden" : ""
-
   return (
     <div>
       {global.isSubmitting && (
@@ -45,7 +38,7 @@ const Layout = ({ children, global }) => {
           <div className='absolute bg-overlay opacity-70 w-full h-full z-20'></div>
         </div>
       )}
-      <div className='max-w-screen-xl px-2 md:px-4 font-sans text-base text-body mx-auto'>
+      <div className='max-w-screen-2xl px-8 font-sans text-base-clamp text-body mx-auto'>
         {children}
       </div>
     </div>
