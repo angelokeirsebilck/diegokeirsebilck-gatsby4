@@ -12,24 +12,26 @@ const Header = () => {
   return (
     <header className='flex justify-between items-center h-16 my-8'>
       <Link to='/'>
-        <StaticImage
-          src='../images/elektro-diego-logo.png'
-          alt='Elektro Diego Logo'
-          placeholder='blurred'
-          layout='constrained'
-          height={70}
-          className='hidden md:block'
-          loading='eager'
-        />
-        <StaticImage
-          src='../images/elektro-diego-logo.png'
-          alt='Elektro Diego Logo'
-          placeholder='blurred'
-          layout='constrained'
-          height={45}
-          className='block md:hidden'
-          loading='eager'
-        />
+        <div className='hidden md:block'>
+          <StaticImage
+            src='../images/elektro-diego-logo.png'
+            alt='Elektro Diego Logo'
+            placeholder='blurred'
+            layout='constrained'
+            height={70}
+            loading='eager'
+          />
+        </div>
+        <div className='block md:hidden'>
+          <StaticImage
+            src='../images/elektro-diego-logo.png'
+            alt='Elektro Diego Logo'
+            placeholder='blurred'
+            layout='constrained'
+            height={45}
+            loading='eager'
+          />
+        </div>
       </Link>
       <div className='hidden md:block'>
         <NavMenu />
