@@ -112,5 +112,14 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: ['Montserrat'],
+          urls: ['/src/fonts/fonts.css'],
+        },
+      },
+    },
   ],
 };
