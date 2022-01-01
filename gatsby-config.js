@@ -34,6 +34,7 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
+          formats: ['auto', 'webp', 'avif'],
           placeholder: `blurred`,
           quality: 80,
           breakpoints: [640, 768, 1024, 1280, 1536],
@@ -74,13 +75,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-postcss',
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [`Montserrat\:100,300,400,500,600,700`],
-    //     display: 'swap',
-    //   },
-    // },
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-robots-txt',
@@ -110,12 +104,6 @@ module.exports = {
         rule: {
           include: /svg/,
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-preconnect',
-      options: {
-        domains: ['https://fonts.googleapis.com'],
       },
     },
   ],

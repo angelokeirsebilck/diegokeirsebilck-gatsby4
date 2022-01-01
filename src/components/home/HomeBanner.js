@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import HomeBannerFigure from '../../images/svg/homebanner.svg';
 
@@ -10,6 +10,15 @@ const query = graphql`
       homebanner {
         intro
         title
+        image {
+          imageFile {
+            id
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          url
+        }
       }
     }
   }
@@ -28,6 +37,8 @@ const HomeBanner = () => {
     return { __html: homebanner.intro };
   };
 
+  const image = getImage(homebanner.image.imageFile);
+
   return (
     <div className='md:grid gap-6 md:grid-cols-12 md:h-[calc(100vh_-_8rem)]'>
       <div className='col-span-7 flex flex-col justify-center'>
@@ -41,7 +52,8 @@ const HomeBanner = () => {
         />
       </div>
       <div className='col-span-5 flex items-center mt-8 md:mt-0'>
-        <HomeBannerFigure className='w-full' />
+        <GatsbyImage image={image} alt='Home Figure' />
+        {/* <HomeBannerFigure className='w-full' /> */}
       </div>
     </div>
   );
