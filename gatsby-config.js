@@ -74,13 +74,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-postcss',
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Montserrat\:100,300,400,500,600,700`],
-        display: 'swap',
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [`Montserrat\:100,300,400,500,600,700`],
+    //     display: 'swap',
+    //   },
+    // },
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-robots-txt',
