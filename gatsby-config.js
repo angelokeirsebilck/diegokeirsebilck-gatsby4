@@ -117,7 +117,7 @@ module.exports = {
       options: {
         custom: {
           families: ['Montserrat'],
-          urls: ['/src/fonts/fonts.css'],
+          urls: ['/fonts.css'],
         },
       },
     },
