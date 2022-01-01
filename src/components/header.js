@@ -1,7 +1,5 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { StaticImage, getImage } from 'gatsby-plugin-image';
 import { Squash as Hamburger } from 'hamburger-react';
 
 import Logo from '../images/svg/elektro-diego-logo.svg';

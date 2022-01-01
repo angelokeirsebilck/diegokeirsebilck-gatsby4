@@ -24,7 +24,7 @@ const SEO = ({ title, description }) => {
   return (
     <Helmet htmlAttributes={{ lang: 'nl' }} title={title || siteTitle}>
       <link rel='canonical' href={siteUrl} />
-      <link rel='preload' href='/fonts.css' />
+      <link rel='preload' href='/fonts.css' as='style' />
       <meta
         name='google-site-verification'
         content='CMrxJHJ5HnXgdDp6txpJz4Iz65Quki4RSIi7jHEI6-4'
