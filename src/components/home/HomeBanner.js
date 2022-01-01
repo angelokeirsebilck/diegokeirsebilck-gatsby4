@@ -40,7 +40,7 @@ const HomeBanner = () => {
           dangerouslySetInnerHTML={createIntroHTMLL()}
         />
       </div>
-      <div className='col-span-5 flex items-center mt-8 md:mt-0'>
+      <div className='w-1/2 ml-auto mr-auto md:w-full col-span-5 flex items-center mt-8 md:mt-0'>
         <StaticImage src='../../images/homebanner.jpg' alt='Home Figure' />
       </div>
     </div>
