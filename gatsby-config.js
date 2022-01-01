@@ -113,11 +113,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: ['https://fonts.googleapis.com'],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        custom: {
-          families: ['Montserrat'],
-          urls: ['/fonts.css'],
+        google: {
+          families: ['Montserrat:100,300,400,500,600,700&display=swap'],
         },
       },
     },
