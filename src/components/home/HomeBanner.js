@@ -2,6 +2,8 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
+import Container from '../base/Container';
+
 const query = graphql`
   {
     strapi {
@@ -26,24 +28,24 @@ const HomeBanner = () => {
     return { __html: homebanner.intro };
   };
 
-  // const image = getImage(homebanner.image.imageFile);
-
   return (
-    <div className='md:grid gap-6 md:grid-cols-12 md:h-[calc(100vh_-_8rem)]'>
-      <div className='col-span-7 flex flex-col justify-center'>
-        <div
-          className='display1-clamp strong-primary font-semibold mb-8 md:mb-10'
-          dangerouslySetInnerHTML={createTitleHTMLL()}
-        />
-        <div
-          className='font-medium strong-primary text-xl md:text-3xl'
-          dangerouslySetInnerHTML={createIntroHTMLL()}
-        />
+    <Container>
+      <div className='md:grid gap-6 md:grid-cols-12 md:h-[calc(100vh_-_8rem)]'>
+        <div className='col-span-7 flex flex-col justify-center'>
+          <h1
+            className='display1-clamp font-sans strong-primary font-semibold mb-4 md:mb-9'
+            dangerouslySetInnerHTML={createTitleHTMLL()}
+          />
+          <div
+            className='font-medium strong-primary text-xl md:text-3xl'
+            dangerouslySetInnerHTML={createIntroHTMLL()}
+          />
+        </div>
+        <div className='col-span-5 flex items-center mt-6 md:mt-0'>
+          <StaticImage src='../../images/homebanner.jpg' alt='Home Figure' />
+        </div>
       </div>
-      <div className='w-1/2 ml-auto mr-auto md:w-full col-span-5 flex items-center mt-8 md:mt-0'>
-        <StaticImage src='../../images/homebanner.jpg' alt='Home Figure' />
-      </div>
-    </div>
+    </Container>
   );
 };
 

@@ -31,7 +31,11 @@ module.exports = {
     },
     extend: {
       fontSize: {
+        base: '19px',
         navlink: '30px',
+      },
+      spacing: {
+        '5/100': '5%',
       },
     },
   },

@@ -38,9 +38,7 @@ const Layout = ({ children, global }) => {
           <div className='absolute bg-overlay opacity-70 w-full h-full z-20'></div>
         </div>
       )}
-      <div className='max-w-screen-2xl px-4 font-sans text-base-clamp text-body mx-auto'>
-        {children}
-      </div>
+      <div className='text-base font-sans'>{children}</div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import HomeBanner from '../components/home/HomeBanner';
+import HomeContent from '../components/home/HomeContent';
 
 // markup
 const IndexPage = () => {
@@ -17,34 +18,9 @@ const IndexPage = () => {
       />
       <Header />
       <HomeBanner />
+      <HomeContent />
     </Layout>
   );
 };
-
-export const query = graphql`
-  {
-    strapi {
-      homeContent {
-        Content {
-          ... on STRAPI_ComponentContentTekstMedia {
-            __typename
-            id
-            Tekst
-            Titel
-            Media {
-              url
-              imageFile {
-                childImageSharp {
-                  id
-                  gatsbyImageData
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default IndexPage;
