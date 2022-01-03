@@ -3,37 +3,40 @@ import {
   CHANGE_LANDINGTEXT,
   CHANGE_IS_FORM_TEXT,
   CHANGE_IS_ERROR,
-} from "./types"
+  CHANGE_IS_NAV_TOP,
+} from './types';
 
-export const changeIsSubmitting = value => dispatch => {
+export const changeIsSubmitting = (value) => (dispatch) => {
   dispatch({
     type: CHANGE_IS_SUBMITTING,
     payload: value,
-  })
-}
+  });
+};
 
-export const changeLandingText = value => dispatch => {
+export const changeLandingText = (value) => (dispatch) => {
   dispatch({
     type: CHANGE_LANDINGTEXT,
     payload: value,
-  })
-}
+  });
+};
 
-export const changeIsError = value => dispatch => {
+export const changeIsError = (value) => (dispatch) => {
   dispatch({
     type: CHANGE_IS_ERROR,
     payload: value,
-  })
-}
+  });
+};
 
-export const changeIsFormText = value => dispatch => {
+export const changeIsFormText = (value) => (dispatch) => {
   dispatch({
     type: CHANGE_IS_FORM_TEXT,
     payload: value,
-  })
+  });
+};
 
-  // setTimeout(() => {
-  //   dispatch(changeLandingText("Binnenkort Online"))
-  //   dispatch(changeisFormText(false))
-  // }, 3000)
-}
+export const changeIsNavTop = (value) => (dispatch) => {
+  dispatch({
+    type: CHANGE_IS_NAV_TOP,
+    payload: value,
+  });
+};

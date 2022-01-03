@@ -3,26 +3,30 @@ import {
   CHANGE_LANDINGTEXT,
   CHANGE_IS_FORM_TEXT,
   CHANGE_IS_ERROR,
-} from "../actions/types"
+  CHANGE_IS_NAV_TOP,
+} from '../actions/types';
 
 const initialState = {
   isSubmitting: false,
-  landingText: "binnenkort online",
+  landingText: 'binnenkort online',
   formText: false,
   isError: false,
-}
+  isNavTop: true,
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_IS_SUBMITTING:
-      return { ...state, isSubmitting: action.payload }
+      return { ...state, isSubmitting: action.payload };
     case CHANGE_LANDINGTEXT:
-      return { ...state, landingText: action.payload }
+      return { ...state, landingText: action.payload };
     case CHANGE_IS_FORM_TEXT:
-      return { ...state, formText: action.payload }
+      return { ...state, formText: action.payload };
     case CHANGE_IS_ERROR:
-      return { ...state, isError: action.payload }
+      return { ...state, isError: action.payload };
+    case CHANGE_IS_NAV_TOP:
+      return { ...state, isNavTop: action.payload };
     default:
-      return state
+      return state;
   }
-}
+};
