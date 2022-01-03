@@ -16,7 +16,11 @@ select:-webkit-autofill:focus {
 @tailwind utilities;
 
 .btn {
-  @apply px-5 py-2 text-navlink lowercase font-medium transition-colors cursor-pointer rounded-md;
+  @apply px-6 py-3.5 text-navlink lowercase font-medium transition-colors cursor-pointer rounded-md inline-block;
+}
+
+.btn-sm {
+  @apply py-1 px-4 text-2xl;
 }
 
 .btn-primary {
@@ -24,7 +28,11 @@ select:-webkit-autofill:focus {
 }
 
 .btn-black {
-  @apply bg-body text-white border-2 border-body hover:bg-white hover:text-body;
+  @apply bg-body text-white border-2 border-body hover:bg-transparent hover:text-body;
+}
+
+.btn-white {
+  @apply bg-white text-body border-2 border-white hover:bg-transparent hover:text-body;
 }
 
 .text-base-clamp {
@@ -32,12 +40,17 @@ select:-webkit-autofill:focus {
 }
 
 .display1-clamp {
-  font-size: clamp(40px, 5vw, 80px);
+  font-size: clamp(45px, 5vw, 80px);
   line-height: 1;
 }
 
 .heading1-clamp {
-  font-size: clamp(30px, 5vw, 60px);
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1;
+}
+
+.heading4-clamp {
+  font-size: clamp(23px, 5vw, 26px);
   line-height: 1;
 }
 

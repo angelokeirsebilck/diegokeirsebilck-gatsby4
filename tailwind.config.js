@@ -31,11 +31,18 @@ module.exports = {
     },
     extend: {
       fontSize: {
+        footer: '16px',
         base: '19px',
         navlink: '30px',
       },
       spacing: {
         '5/100': '5%',
+      },
+      letterSpacing: {
+        1: '1px',
+        2: '2px',
+        4: '4px',
+        3: '3px',
       },
     },
   },

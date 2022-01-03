@@ -6,6 +6,7 @@ import Container from '../base/Container';
 import LinesDown from '../../images/svg/lines-down.svg';
 import LinesDownRight from '../../images/svg/lines-down-right.svg';
 import SparkBig from '../../images/svg/spark-big.svg';
+import ThemeButton from '../base/Button';
 
 const MediaText = ({ content }) => {
   const contentPos =
@@ -16,6 +17,8 @@ const MediaText = ({ content }) => {
     content.background === 'white' ? 'my-12 md:my-28' : 'py-12 md:py-28';
   const textalign =
     content.textalign === 'center' ? 'flex flex-col justify-center' : '';
+
+  const btnClass = content.background === 'white' ? 'btn-primary' : 'btn-black';
 
   const createTitleHTML = () => {
     return { __html: content.title };
@@ -57,15 +60,27 @@ const MediaText = ({ content }) => {
         <div
           className={`${spacing} md:grid grid-cols-12 gap-6 grid-flow-row-dense`}
         >
-          <div className={`${contentPos} ${textalign} col-span-6`}>
+          <div
+            className={`${contentPos} ${textalign} col-span-6 flex flex-col`}
+          >
             <h2
-              className='font-sans heading1-clamp font-semibold mb-6 md:mb-12'
+              className='font-sans heading1-clamp font-semibold mb-6 md:mb-12 tracking-3'
               dangerouslySetInnerHTML={createTitleHTML()}
             />
             <div
-              className='text-base'
+              className='text-base tracking-1'
               dangerouslySetInnerHTML={createTextHTMLL()}
             />
+            {content.link && (
+              <div className='mt-6'>
+                <ThemeButton
+                  className={btnClass}
+                  type='gatsby'
+                  to={`/${content.link.url}`}
+                  text={content.link.text}
+                />
+              </div>
+            )}
           </div>
           <div className={`${imgPos} col-span-5 mt-6 md:mt-0 relative`}>
             {showLinesDownLeft && (

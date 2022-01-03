@@ -14,6 +14,10 @@ const query = graphql`
             title
             imagepos
             background
+            link {
+              url
+              text
+            }
             textalign
             media {
               imageFile {
@@ -37,8 +41,6 @@ const HomeContent = () => {
       homeContent: { Content },
     },
   } = useStaticQuery(query);
-
-  console.log(Content);
 
   return Content.map((c) => {
     switch (c.__typename) {

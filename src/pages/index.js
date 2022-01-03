@@ -7,6 +7,7 @@ import SEO from '../components/seo';
 
 import HomeBanner from '../components/home/HomeBanner';
 import HomeContent from '../components/home/HomeContent';
+import Footer from '../components/Footer';
 
 // markup
 const IndexPage = () => {
@@ -19,6 +20,7 @@ const IndexPage = () => {
       <Header />
       <HomeBanner />
       <HomeContent />
+      <Footer />
     </Layout>
   );
 };

@@ -12,7 +12,7 @@ const NavLink = ({ to, text, special }) => {
     </div>
   ) : (
     <Link className='text-navlink ml-16 font-medium group relative' to={to}>
-      <span className='relative z-20'>{text}</span>
+      <span className='relative z-20 lowercase'>{text}</span>
       <SparkHover
         alt='Spark hover'
         className='absolute z-10 opacity-0 transition-opacity group-hover:opacity-100 -top-1 left-1/2 transform -translate-x-1/2 rotate-12'
