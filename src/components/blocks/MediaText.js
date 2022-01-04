@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import Container from '../base/Container';
+// Images
 import LinesDown from '../../images/svg/lines-down.svg';
 import LinesDownRight from '../../images/svg/lines-down-right.svg';
 import SparkBig from '../../images/svg/spark-big.svg';
+
+// Components
+import Container from '../base/Container';
 import ThemeButton from '../base/Button';
 
 const MediaText = ({ content }) => {

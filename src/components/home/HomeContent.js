@@ -1,5 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+
+// Components
 import MediaText from '../blocks/MediaText';
 
 const query = graphql`

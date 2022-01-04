@@ -15,11 +15,18 @@ module.exports = {
       primary: {
         light: '#ffd995',
         DEFAULT: '#fead1b',
-        dark: '#eaa019',
+        dark: '#E59401',
+        hover: '#765821',
+      },
+      blue: {
+        DEFAULT: '#1B6CFE',
       },
       gray: {
         DEFAULT: '#9CA3AF',
         dark: '#4B5563',
+      },
+      green: {
+        DEFAULT: '#1BFEAD',
       },
       overlay: {
         DEFAULT: '#D1D5DB',

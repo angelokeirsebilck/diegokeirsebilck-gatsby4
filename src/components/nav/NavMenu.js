@@ -1,6 +1,7 @@
 import React from 'react';
-
 import NavLinks from '../../constants/main-nav';
+
+// Components
 import NavLink from './NavLink';
 
 const NavMenu = () => {

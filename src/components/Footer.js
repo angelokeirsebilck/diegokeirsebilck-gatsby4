@@ -1,11 +1,14 @@
 import React from 'react';
-
 import NavLinks from '../constants/main-nav';
-
-import Container from './base/Container';
-import LogoWhite from '../images/svg/elektro-diego-logo-white.svg';
-import { FaFacebookF } from 'react-icons/fa';
 import { Link } from 'gatsby';
+
+// Images
+import LogoWhite from '../images/svg/elektro-diego-logo-white.svg';
+import LogoBlack from '../images/svg/elektro-diego-logo-black.svg';
+import { FaFacebookF } from 'react-icons/fa';
+
+// Components
+import Container from './base/Container';
 import ThemeButton from './base/Button';
 
 const Footer = () => {
@@ -13,17 +16,17 @@ const Footer = () => {
     <div className=''>
       <div className='text-footer bg-primary py-8 md:py-16'>
         <Container>
-          <div className='lg:grid gap-6 md:grid-cols-12 text-white'>
+          <div className='lg:grid gap-6 md:grid-cols-12 text-body'>
             <div className='col-span-6 flex flex-col mb-10 md:mb-0'>
               <Link to='/'>
-                <LogoWhite className='mb-6 md:mb-12' />
+                <LogoBlack className='mb-6 md:mb-12' />
               </Link>
 
               <div className='flex mb-2'>
                 <span className='font-bold mr-2.5'>T</span>
                 <a
                   href='tel:+32473509041'
-                  className='transition-colors hover:text-body'
+                  className='transition-colors hover:text-primary-hover font-medium'
                 >
                   +32 473 50 90 41
                 </a>
@@ -32,7 +35,7 @@ const Footer = () => {
                 <span className='font-bold mr-2.5'>E</span>
                 <a
                   href='mailto:info@elektro-diego.be'
-                  className='transition-colors hover:text-body'
+                  className='transition-colors hover:text-primary-hover  font-medium'
                 >
                   info@elektro-diego.be
                 </a>
@@ -48,7 +51,7 @@ const Footer = () => {
                     <li key={link.id}>
                       <Link
                         to={link.url}
-                        className='transition-colors hover:text-body break-inside-avoid inline-block leading-none'
+                        className='transition-colors hover:text-primary-hover break-inside-avoid inline-block leading-none font-medium'
                       >
                         {link.name}
                       </Link>
@@ -63,7 +66,7 @@ const Footer = () => {
               </span>
               <div className='flex items-center'>
                 <ThemeButton
-                  className='btn-sm btn-white'
+                  className='btn-sm btn-black'
                   type='gatsby'
                   to='/contact'
                   text='contact'
@@ -71,7 +74,7 @@ const Footer = () => {
                 <a
                   href=''
                   target='_blank'
-                  className='ml-6 text-white transition-colors hover:text-body'
+                  className='ml-6 text-body transition-colors hover:text-primary-hover'
                   rel='nofollow'
                 >
                   <FaFacebookF color='text-inherit' size={24} />

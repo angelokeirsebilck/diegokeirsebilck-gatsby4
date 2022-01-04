@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-import Button from '../base/Button';
+// Images
 import SparkHover from '../../images/svg/spark-hover.svg';
+
+// Components
+import Button from '../base/Button';
 
 const NavLink = ({ to, text, special }) => {
   const link = special ? (
