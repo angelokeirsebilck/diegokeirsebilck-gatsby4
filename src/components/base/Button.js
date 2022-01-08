@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { changeIsNavOpen } from '../../../actions/globalActions';
 
 const ThemeButton = ({ className, type, text, to, changeIsNavOpen }) => {
-  const defaultClass = 'btn relative ';
+  const defaultClass = 'btn relative group ';
   const btnClass = defaultClass + className;
   switch (type) {
     case 'button':
@@ -33,7 +33,7 @@ const ThemeButton = ({ className, type, text, to, changeIsNavOpen }) => {
 
           <SparkHover
             alt='Spark hover'
-            className='absolute z-10 opacity-0 transition-opacity top-[3.5px] left-1/2 transform -translate-x-1/2 rotate-12'
+            className='absolute z-10 opacity-0 transition-opacity group-hover:opacity-0 top-[3.5px] left-1/2 transform -translate-x-1/2 rotate-12'
           />
         </Link>
       );

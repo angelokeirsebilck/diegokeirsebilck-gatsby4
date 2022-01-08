@@ -100,10 +100,10 @@ html {
 
 .link-active {
   svg {
-    opacity: 1 !important;
+    opacity: 1;
   }
 
   &.btn svg {
-    opacity: 0.6 !important;
+    opacity: 0.6;
   }
 }
