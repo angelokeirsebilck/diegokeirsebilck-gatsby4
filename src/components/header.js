@@ -32,7 +32,7 @@ const Header = ({ changeIsNavOpen, global }) => {
           <header
             className={`${headerTranslateFix} flex  justify-between items-center bg-white py-6`}
           >
-            <Link to='/'>
+            <Link to='/' onClick={() => changeIsNavOpen(false)}>
               <Logo className='h-10 md:h-16 w-full' />
             </Link>
             <NavMenu />

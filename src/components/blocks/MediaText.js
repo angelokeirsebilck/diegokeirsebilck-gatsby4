@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { hyphenateSync } from 'hyphen/nl';
 
 // Images
 import LinesDown from '../../images/svg/lines-down.svg';
@@ -24,7 +25,7 @@ const MediaText = ({ content }) => {
   const btnClass = content.background === 'white' ? 'btn-primary' : 'btn-black';
 
   const createTitleHTML = () => {
-    return { __html: content.title };
+    return { __html: hyphenateSync(content.title) };
   };
 
   const createTextHTMLL = () => {

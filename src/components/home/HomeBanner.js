@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
+import { hyphenateSync } from 'hyphen/nl';
 
 // Components
 import Container from '../base/Container';
@@ -22,7 +23,7 @@ const HomeBanner = () => {
   } = useStaticQuery(query);
 
   const createTitleHTMLL = () => {
-    return { __html: homebanner.title };
+    return { __html: hyphenateSync(homebanner.title, { minWordLength: 8 }) };
   };
 
   const createIntroHTMLL = () => {

@@ -22,6 +22,7 @@ const NavLink = ({ to, text, special, changeIsNavOpen }) => {
       className='text-navlink mb-6 md:mb-0 md:ml-16 font-medium group relative'
       to={to}
       onClick={() => changeIsNavOpen(false)}
+      activeClassName='link-active'
     >
       <span className='relative z-20 lowercase'>{text}</span>
       <SparkHover
