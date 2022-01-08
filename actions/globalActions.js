@@ -4,6 +4,7 @@ import {
   CHANGE_IS_FORM_TEXT,
   CHANGE_IS_ERROR,
   CHANGE_IS_NAV_TOP,
+  CHANGE_IS_NAV_OPEN,
 } from './types';
 
 export const changeIsSubmitting = (value) => (dispatch) => {
@@ -37,6 +38,13 @@ export const changeIsFormText = (value) => (dispatch) => {
 export const changeIsNavTop = (value) => (dispatch) => {
   dispatch({
     type: CHANGE_IS_NAV_TOP,
+    payload: value,
+  });
+};
+
+export const changeIsNavOpen = (value) => (dispatch) => {
+  dispatch({
+    type: CHANGE_IS_NAV_OPEN,
     payload: value,
   });
 };

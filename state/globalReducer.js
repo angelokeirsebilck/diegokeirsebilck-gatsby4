@@ -4,6 +4,7 @@ import {
   CHANGE_IS_FORM_TEXT,
   CHANGE_IS_ERROR,
   CHANGE_IS_NAV_TOP,
+  CHANGE_IS_NAV_OPEN,
 } from '../actions/types';
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
   formText: false,
   isError: false,
   isNavTop: true,
+  isNavOpen: false,
 };
 
 export default (state = initialState, action) => {
@@ -26,6 +28,8 @@ export default (state = initialState, action) => {
       return { ...state, isError: action.payload };
     case CHANGE_IS_NAV_TOP:
       return { ...state, isNavTop: action.payload };
+    case CHANGE_IS_NAV_OPEN:
+      return { ...state, isNavOpen: action.payload };
     default:
       return state;
   }

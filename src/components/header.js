@@ -12,24 +12,38 @@ import Headroom from 'react-headroom';
 
 // Redux
 import { connect } from 'react-redux';
-import { changeIsNavTop } from '../../actions/globalActions';
+import { changeIsNavOpen } from '../../actions/globalActions';
 
-const Header = ({ changeIsNavTop, global }) => {
-  const headerSpacing = global.isNavTop ? 'py-6' : 'py-2';
+import { useLockBodyScroll, useToggle } from 'react-use';
+
+const Header = ({ changeIsNavOpen, global }) => {
+  const [locked, toggleLocked] = useToggle(false);
+  useLockBodyScroll(locked);
+
+  const headerTranslateFix = global.isNavOpen ? 'transform translate-y-0' : '';
 
   return (
     <div className={` bg-white relative z-50`}>
-      <Headroom disableInlineStyles>
+      <Headroom
+        disableInlineStyles
+        className={global.isNavOpen ? 'is-open' : ''}
+      >
         <Container>
-          <header className={`flex justify-between items-center bg-white py-6`}>
+          <header
+            className={`${headerTranslateFix} flex  justify-between items-center bg-white py-6`}
+          >
             <Link to='/'>
               <Logo className='h-10 md:h-16 w-full' />
             </Link>
-            <div className='hidden md:block'>
-              <NavMenu />
-            </div>
+            <NavMenu />
             <div className='block md:hidden'>
-              <Hamburger />
+              <Hamburger
+                toggled={global.isNavOpen}
+                onToggle={(toggled) => {
+                  changeIsNavOpen(toggled);
+                  toggleLocked(toggled);
+                }}
+              />
             </div>
           </header>
         </Container>
@@ -41,4 +55,4 @@ const mapStateToProps = (state) => ({
   global: state.global,
 });
 
-export default connect(mapStateToProps, { changeIsNavTop })(Header);
+export default connect(mapStateToProps, { changeIsNavOpen })(Header);

@@ -8,17 +8,25 @@ import SparkHover from '../../images/svg/spark-hover.svg';
 // Components
 import Button from '../base/Button';
 
-const NavLink = ({ to, text, special }) => {
+// Redux
+import { connect } from 'react-redux';
+import { changeIsNavOpen } from '../../../actions/globalActions';
+
+const NavLink = ({ to, text, special, changeIsNavOpen }) => {
   const link = special ? (
-    <div className='ml-16'>
+    <div className='mb-6 md:mb-0 md:ml-16'>
       <Button type='gatsby' to={to} className='btn-black' text={text} />
     </div>
   ) : (
-    <Link className='text-navlink ml-16 font-medium group relative' to={to}>
+    <Link
+      className='text-navlink mb-6 md:mb-0 md:ml-16 font-medium group relative'
+      to={to}
+      onClick={() => changeIsNavOpen(false)}
+    >
       <span className='relative z-20 lowercase'>{text}</span>
       <SparkHover
         alt='Spark hover'
-        className='absolute z-10 opacity-0 transition-opacity group-hover:opacity-100 -top-1 left-1/2 transform -translate-x-1/2 rotate-12'
+        className='absolute z-10 opacity-0 transition-opacity group-hover:opacity-100 top-[3.5px] left-1/2 transform -translate-x-1/2 rotate-12'
       />
       {/* <img src={SparkHover} /> */}
     </Link>
@@ -33,4 +41,4 @@ NavLink.propTypes = {
   special: PropTypes.bool.isRequired,
 };
 
-export default NavLink;
+export default connect(null, { changeIsNavOpen })(NavLink);

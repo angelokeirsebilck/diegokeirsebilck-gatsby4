@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-const ThemeButton = ({ className, type, text, to }) => {
+// Redux
+import { connect } from 'react-redux';
+import { changeIsNavOpen } from '../../../actions/globalActions';
+
+const ThemeButton = ({ className, type, text, to, changeIsNavOpen }) => {
   const defaultClass = 'btn ';
   const btnClass = defaultClass + className;
   switch (type) {
@@ -16,7 +20,11 @@ const ThemeButton = ({ className, type, text, to }) => {
       );
     case 'gatsby':
       return (
-        <Link to={to} className={btnClass}>
+        <Link
+          onClick={() => changeIsNavOpen(false)}
+          to={to}
+          className={btnClass}
+        >
           {text}
         </Link>
       );
@@ -31,4 +39,4 @@ ThemeButton.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-export default ThemeButton;
+export default connect(null, { changeIsNavOpen })(ThemeButton);

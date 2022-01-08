@@ -16,7 +16,7 @@ select:-webkit-autofill:focus {
 @tailwind utilities;
 
 .btn {
-  @apply px-6 py-3.5 text-navlink lowercase font-medium transition-colors cursor-pointer rounded-md inline-block;
+  @apply px-6 py-2.5 text-navlink lowercase font-medium transition-colors cursor-pointer rounded-md inline-block leading-none;
 }
 
 .btn-sm {
@@ -90,4 +90,10 @@ html {
 .headroom--pinned {
   position: fixed;
   transform: translateY(0%);
+}
+
+.is-open {
+  > div {
+    transform: translateY(0) !important;
+  }
 }
