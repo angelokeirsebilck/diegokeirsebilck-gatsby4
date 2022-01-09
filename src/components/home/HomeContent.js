@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 // Components
 import MediaText from '../blocks/MediaText';
+import USP from '../blocks/USP';
 
 const query = graphql`
   {
@@ -31,6 +32,17 @@ const query = graphql`
               name
             }
           }
+          ... on STRAPI_ComponentContentUsp {
+            __typename
+            id
+            Background
+            uspitem {
+              text
+              icon {
+                url
+              }
+            }
+          }
         }
       }
     }
@@ -47,7 +59,9 @@ const HomeContent = () => {
   return Content.map((c) => {
     switch (c.__typename) {
       case 'STRAPI_ComponentContentTekstMedia':
-        return <MediaText key={c.id} content={c} />;
+        return <MediaText key={`TextMedia${c.id}`} content={c} />;
+      case 'STRAPI_ComponentContentUsp':
+        return <USP key={`Usp${c.id}`} content={c} />;
       default:
         return null;
     }

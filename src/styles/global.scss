@@ -107,3 +107,11 @@ html {
     opacity: 0.6;
   }
 }
+
+.section {
+  @apply my-12 md:my-28;
+}
+
+.section-bg {
+  @apply py-12 md:py-28;
+}

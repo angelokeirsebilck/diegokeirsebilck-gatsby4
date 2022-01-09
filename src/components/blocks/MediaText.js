@@ -17,8 +17,7 @@ const MediaText = ({ content }) => {
     content.imagepos === 'left' ? 'col-start-7' : 'col-start-1';
   const imgPos = content.imagepos === 'left' ? 'col-start-1' : 'col-start-8';
 
-  const spacing =
-    content.background === 'white' ? 'my-12 md:my-28' : 'py-12 md:py-28';
+  const spacing = content.background === 'white' ? 'section' : 'section-bg';
   const textalign =
     content.textalign === 'center' ? 'flex flex-col justify-center' : '';
 

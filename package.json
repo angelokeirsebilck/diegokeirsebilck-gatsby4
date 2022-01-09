@@ -45,6 +45,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.22.5",
     "react-icons": "^4.3.1",
+    "react-inlinesvg": "^2.3.0",
     "react-redux": "^7.2.6",
     "react-use": "^17.3.2",
     "redux": "^4.1.2",
