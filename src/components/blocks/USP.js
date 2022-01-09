@@ -26,7 +26,7 @@ const USP = ({ content }) => {
               <div className='flex flex-col items-center' key={index}>
                 {content.Background === 'yellow' ? (
                   <SVG
-                    src={`http://localhost:1337${usp.icon.url}`}
+                    src={`${usp.icon.url}`}
                     height={70}
                     width='100%'
                     preProcessor={(code) =>
@@ -35,7 +35,7 @@ const USP = ({ content }) => {
                   />
                 ) : (
                   <SVG
-                    src={`http://localhost:1337${usp.icon.url}`}
+                    src={`${usp.icon.url}`}
                     height={70}
                     width='100%'
                     preProcessor={(code) =>

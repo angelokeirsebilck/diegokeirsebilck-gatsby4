@@ -22,11 +22,14 @@ const Cta = ({ content }) => {
           : 'bg-white overflow-hidden relative z-10'
       }
     >
-      <GatsbyImage
-        image={backgroundImage}
-        alt={content.image.name}
-        className='absolute opacity-20 top-0 left-0 z-20 w-full h-full'
-      />
+      <div className='absolute opacity-20 top-0 left-0 z-20 w-full h-full'>
+        <GatsbyImage
+          image={backgroundImage}
+          alt={content.image.name}
+          className='w-full h-full'
+        />
+      </div>
+
       <div className='relative z-30'>
         <Container>
           <div className={`${spacing} grid gap-6 md:grid-cols-12 `}>
