@@ -16,11 +16,11 @@ select:-webkit-autofill:focus {
 @tailwind utilities;
 
 .btn {
-  @apply px-6 py-2.5 text-navlink lowercase font-medium transition-colors cursor-pointer rounded-md inline-block leading-none;
+  @apply px-6 py-2.5 text-center text-navlinksm md:text-navlink lowercase font-medium transition-colors cursor-pointer rounded-md inline-block leading-none;
 }
 
 .btn-sm {
-  @apply py-1 px-4 text-2xl;
+  @apply py-1 px-4 text-xl md:text-2xl;
 }
 
 .btn-primary {
@@ -49,6 +49,11 @@ select:-webkit-autofill:focus {
   line-height: 1;
 }
 
+.heading3-clamp {
+  font-size: clamp(28px, 5vw, 34px);
+  line-height: 1;
+}
+
 .heading4-clamp {
   font-size: clamp(23px, 5vw, 26px);
   line-height: 1;
@@ -67,6 +72,10 @@ p:last-of-type {
 
 html {
   font-size: 16px !important;
+}
+
+p {
+  @apply mb-6;
 }
 
 .headroom {

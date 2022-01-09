@@ -41,6 +41,7 @@ module.exports = {
         footer: '16px',
         base: '19px',
         navlink: '30px',
+        navlinksm: '24px',
       },
       spacing: {
         '5/100': '5%',

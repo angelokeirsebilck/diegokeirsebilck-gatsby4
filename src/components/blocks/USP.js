@@ -9,7 +9,6 @@ const USP = ({ content }) => {
 
   const spacing = content.Background === 'white' ? 'section' : 'section-bg';
 
-  console.log(content);
   return (
     <div
       className={
