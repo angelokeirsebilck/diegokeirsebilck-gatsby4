@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import { Squash as Hamburger } from 'hamburger-react';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // Images
-import Logo from '../images/svg/elektro-diego-logo.svg';
+// import Logo from '../images/svg/elektro-diego-logo.svg';
 
 // Components
 import NavMenu from './nav/NavMenu';
@@ -33,7 +34,12 @@ const Header = ({ changeIsNavOpen, global }) => {
             className={`${headerTranslateFix} flex  justify-between items-center bg-white py-6`}
           >
             <Link to='/' onClick={() => changeIsNavOpen(false)}>
-              <Logo className='h-10 md:h-16 w-full' />
+              <StaticImage
+                src='../images/elektro-diego-logo.png'
+                alt='Elektro Diego Logo'
+                className=''
+              />
+              {/* <Logo className='h-10 md:h-16 w-full' /> */}
             </Link>
             <NavMenu />
             <div className='block md:hidden'>

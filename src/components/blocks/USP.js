@@ -1,5 +1,5 @@
 import React from 'react';
-import SVG, { Props as SVGProps } from 'react-inlinesvg';
+import SVG from 'react-inlinesvg';
 
 // Components
 import Container from '../base/Container';
@@ -44,7 +44,7 @@ const USP = ({ content }) => {
                   />
                 )}
 
-                <span className='text-body text-base tracking-1 inline-block mt-6 text-center font-medium'>
+                <span className='text-body text-base tracking-1 inline-block mt-6 text-center font-semibold'>
                   {usp.text}
                 </span>
               </div>

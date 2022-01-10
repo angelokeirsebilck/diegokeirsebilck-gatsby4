@@ -1,10 +1,10 @@
 import React from 'react';
 import NavLinks from '../constants/main-nav';
 import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // Images
-import LogoWhite from '../images/svg/elektro-diego-logo-white.svg';
-import LogoBlack from '../images/svg/elektro-diego-logo-black.svg';
+// import LogoBlack from '../images/svg/elektro-diego-logo-black.svg';
 import { FaFacebookF } from 'react-icons/fa';
 
 // Components
@@ -18,9 +18,16 @@ const Footer = () => {
         <Container>
           <div className='lg:grid gap-6 md:grid-cols-12 text-body'>
             <div className='col-span-6 flex flex-col mb-10 md:mb-0'>
-              <Link to='/'>
-                <LogoBlack className='mb-6 md:mb-12' />
-              </Link>
+              <div className='inline-block mb-6 md:mb-12'>
+                <Link to='/'>
+                  <StaticImage
+                    src='../images/elektro-diego-logo-black.png'
+                    alt='Elektro Diego Logo'
+                    className=''
+                  />
+                  {/* <LogoBlack className='mb-6 md:mb-12' /> */}
+                </Link>
+              </div>
 
               <div className='flex mb-2'>
                 <span className='font-bold mr-2.5'>T</span>

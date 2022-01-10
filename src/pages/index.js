@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
 
 // Components
 import Header from '../components/header';

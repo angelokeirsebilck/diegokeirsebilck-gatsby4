@@ -71,7 +71,7 @@ const MediaText = ({ content }) => {
               dangerouslySetInnerHTML={createTitleHTML()}
             />
             <div
-              className='text-base tracking-1'
+              className='text-base tracking-1 leading-tight'
               dangerouslySetInnerHTML={createTextHTMLL()}
             />
             {content.link && (
