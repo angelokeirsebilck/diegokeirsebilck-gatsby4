@@ -13,7 +13,7 @@ module.exports = {
         DEFAULT: '#F87171',
       },
       primary: {
-        light: '#ffd995',
+        light: '#FFD68D',
         DEFAULT: '#fead1b',
         dark: '#E59401',
         hover: '#765821',
@@ -32,7 +32,6 @@ module.exports = {
         DEFAULT: '#D1D5DB',
       },
     },
-
     animation: {
       spin: 'spin .5s linear infinite',
     },

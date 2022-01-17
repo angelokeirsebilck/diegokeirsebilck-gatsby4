@@ -14,7 +14,7 @@ import ThemeButton from './base/Button';
 const Footer = () => {
   return (
     <div className=''>
-      <div className='text-footer bg-primary py-8 md:py-16'>
+      <div className='text-footer bg-primary py-8 md:py-16 leading-relaxed'>
         <Container>
           <div className='lg:grid gap-6 md:grid-cols-12 text-body'>
             <div className='col-span-6 flex flex-col mb-10 md:mb-0'>
@@ -29,7 +29,7 @@ const Footer = () => {
                 </Link>
               </div>
 
-              <div className='flex mb-2'>
+              <div className='flex'>
                 <span className='font-bold mr-2.5'>T</span>
                 <a
                   href='tel:+32473509041'

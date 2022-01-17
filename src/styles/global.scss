@@ -23,6 +23,10 @@ select:-webkit-autofill:focus {
   @apply py-1 px-4 text-xl md:text-2xl;
 }
 
+.btn-consist {
+  @apply text-navlink;
+}
+
 .btn-primary {
   @apply bg-primary text-body border-2 border-primary hover:bg-white;
 }
@@ -123,4 +127,8 @@ p {
 
 .section-bg {
   @apply py-12 md:py-28;
+}
+
+.swiper-button-disabled {
+  @apply opacity-25 pointer-events-none;
 }

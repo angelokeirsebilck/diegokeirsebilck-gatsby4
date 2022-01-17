@@ -34,11 +34,23 @@ const Header = ({ changeIsNavOpen, global }) => {
             className={`${headerTranslateFix} flex  justify-between items-center bg-white py-6`}
           >
             <Link to='/' onClick={() => changeIsNavOpen(false)}>
-              <StaticImage
-                src='../images/elektro-diego-logo.png'
-                alt='Elektro Diego Logo'
-                className=''
-              />
+              <div className='hidden md:block'>
+                <StaticImage
+                  src='../images/elektro-diego-logo.png'
+                  alt='Elektro Diego Logo'
+                  className=''
+                  height={71}
+                />
+              </div>
+              <div className='block md:hidden'>
+                <StaticImage
+                  src='../images/elektro-diego-logo.png'
+                  alt='Elektro Diego Logo'
+                  className=''
+                  height={48}
+                />
+              </div>
+
               {/* <Logo className='h-10 md:h-16 w-full' /> */}
             </Link>
             <NavMenu />

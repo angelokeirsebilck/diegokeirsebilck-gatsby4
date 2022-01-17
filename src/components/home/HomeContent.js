@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import MediaText from '../blocks/MediaText';
 import USP from '../blocks/USP';
 import Cta from '../blocks/Cta';
+import References from '../blocks/References';
 
 const query = graphql`
   {
@@ -64,6 +65,16 @@ const query = graphql`
             }
             ctatitle
           }
+          ... on STRAPI_ComponentContentReferences {
+            __typename
+            id
+            refbackground
+            reftitle
+            Refereceitem {
+              name
+              text
+            }
+          }
         }
       }
     }
@@ -85,6 +96,8 @@ const HomeContent = () => {
         return <USP key={`Usp${c.id}`} content={c} />;
       case 'STRAPI_ComponentContentCta':
         return <Cta key={`Cta${c.id}`} content={c} />;
+      case 'STRAPI_ComponentContentReferences':
+        return <References key={`References${c.id}`} content={c} />;
       default:
         return null;
     }

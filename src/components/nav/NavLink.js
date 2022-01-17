@@ -15,7 +15,12 @@ import { changeIsNavOpen } from '../../../actions/globalActions';
 const NavLink = ({ to, text, special, changeIsNavOpen }) => {
   const link = special ? (
     <div className='mb-6 md:mb-0 md:ml-16'>
-      <Button type='gatsby' to={to} className='btn-black' text={text} />
+      <Button
+        type='gatsby'
+        to={to}
+        className='btn-black btn-consist'
+        text={text}
+      />
     </div>
   ) : (
     <Link
