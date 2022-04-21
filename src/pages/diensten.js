@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Title from '../components/base/Title';
+import Footer from '../components/Footer';
 
 const diensten = () => {
   return (
@@ -11,7 +13,8 @@ const diensten = () => {
         description='Elektro Diego - Diego Keirsebilck - Voor al je algemene elektriciteitswerken'
       />
       <Header />
-      Diensten
+      <Title title='Diensten' />
+      <Footer />
     </Layout>
   );
 };

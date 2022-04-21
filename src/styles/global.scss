@@ -92,6 +92,9 @@ p {
 .headroom--unfixed {
   position: relative;
   transform: translateY(0);
+  .header {
+    @apply border-b-2 border-y-primary-light;
+  }
 }
 .headroom--scrolled {
   transition: transform 200ms ease-in-out;
@@ -132,3 +135,7 @@ p {
 .swiper-button-disabled {
   @apply opacity-25 pointer-events-none;
 }
+
+// .header {
+//   @apply border-b-2 border-y-primary-light;
+// }

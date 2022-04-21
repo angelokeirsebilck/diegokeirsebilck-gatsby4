@@ -17,6 +17,7 @@ module.exports = {
         DEFAULT: '#fead1b',
         dark: '#E59401',
         hover: '#765821',
+        extralight: '3FFF3DD',
       },
       blue: {
         DEFAULT: '#1B6CFE',

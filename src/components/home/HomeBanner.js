@@ -32,7 +32,7 @@ const HomeBanner = () => {
 
   return (
     <Container>
-      <div className='md:grid gap-6 md:grid-cols-12 md:h-[calc(100vh_-_8rem)]'>
+      <div className='pt-6 md:pt-0 md:grid gap-6 md:grid-cols-12 md:h-[calc(100vh_-_8rem)]'>
         <div className='col-span-7 flex flex-col justify-center'>
           <h1
             className='display1-clamp font-sans strong-primary font-semibold mb-4 md:mb-9 tracking-4'
